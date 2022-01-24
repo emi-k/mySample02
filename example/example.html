@@ -37,20 +37,28 @@
     </script>
     <script type="text/javascript" src="jquery.mobile.min.js"></script>
     <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+
       .bookmark-bubble-icon{
-        width: 48px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
         flex-shrink: 0;
-        margin: -2px 7px 3px 5px;
+        margin: 0 8px 0 0;
         border-radius: 10px;
       }
+
+      .bookmark-bubble-inner img {
+        width: 16px;
+        vertical-align: -2px;
+      }
+
     </style>
   </head>
   <body>
    <div data-role="page" id="index">
-    <div data-role="header">
-        <h1>Bookmark Bubble</h1>
-    </div>
    <div data-role="content">
      Bookmark  Sample
 
