@@ -662,14 +662,14 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
   bubbleInner.className = 'bookmark-bubble-inner';
   bubbleInner.style.position = 'relative';
   bubbleInner.style.display = 'flex';
-  bubbleInner.style.width = '214px';
+  bubbleInner.style.width = '240px';
   if (this.getAndroidVersion_() >= this.getVersion_(3, 0)) {
-    bubbleInner.style.margin = '0 0 0 ' +(window.innerWidth - 240) + 'px';
+    bubbleInner.style.margin = '0 0 0 ' +(window.innerWidth - 280) + 'px';
   } else {
     bubbleInner.style.margin = isIpad ? '0 0 0 82px' : '0 auto';
   }
   bubbleInner.style.border = '2px solid #fff';
-  bubbleInner.style.padding = '1em 1.5em 1em 0.5em';
+  bubbleInner.style.padding = '8px 22px 8px 8px';
   bubbleInner.style.WebkitBorderRadius = '8px';
   bubbleInner.style.WebkitBoxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
   bubbleInner.style.WebkitBackgroundSize = '100% 8px';
@@ -730,26 +730,6 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
   icon.style.WebkitBackgroundSize = 'contain';
   bubbleInner.insertBefore(icon, bubbleInner.firstChild);
 
-  var arrow = document.createElement('div');
-  arrow.className = 'bookmark-bubble-arrow';
-  arrow.style.backgroundImage = 'url(' + this.IMAGE_ARROW_DATA_URL_ + ')';
-  arrow.style.width = '25px';
-  arrow.style.height = '19px';
-  arrow.style.position = 'absolute';
-  arrow.style.left = '111px';
-  if (isIpad || isPlayBook) {
-    arrow.style.WebkitTransform = 'rotate(180deg)';
-    arrow.style.top = '-19px';
-    arrow.style.left = '111px';
-  } else if (this.getAndroidVersion_() >= this.getVersion_(3, 0)) {
-    arrow.style.WebkitTransform = 'scale(1, -1)';
-    arrow.style.top = '-19px';
-    arrow.style.left = '180px';
-  } else {
-    arrow.style.bottom = '-19px';
-    arrow.style.left = '111px';
-  }
-  bubbleInner.appendChild(arrow);
 
   var close = document.createElement('a');
   close.className = 'bookmark-bubble-close';
